@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆和圆弧</title>
+</head>
+<body>
+<canvas id="canvas" width="1024" height="768" style="border: 1px solid #aaa;display: block;margin: 50px auto;">
+    当前浏览器不支持canvas，请更换浏览器后重新尝试！
+</canvas>
+
+<script>
+
+    window.onload=function(){
+        var canvas = document.getElementById('canvas');
+
+        canvas.width = 1024;
+        canvas.height = 768;
+
+        var context = canvas.getContext('2d');
+
+        context.lineWidth = 5;
+        context.strokeStyle = "#005588";
+        //顺时针
+        //context.arc(300,300,200,0,1.5*Math.PI);
+        //逆时针
+        //context.arc(300,300,200,0,1.5*Math.PI,true);
+        //context.stroke();
+        for(var i = 0; i < 10;i++){
+            context.beginPath();
+            context.arc(50+100*i,60,40,0,2*Math.PI*(i+1)/10);
+            context.closePath();
+
+            context.stroke();
+        }
+
+        for(var i = 0; i < 10;i++){
+            context.beginPath();
+            context.arc(50+100*i,180,40,0,2*Math.PI*(i+1)/10);
+
+            context.stroke();
+        }
+
+        for(var i = 0; i < 10;i++){
+            context.beginPath();
+            context.arc(50+100*i,300,40,0,2*Math.PI*(i+1)/10,true);
+            context.closePath();
+            context.stroke();
+        }
+
+        for(var i = 0; i < 10;i++){
+            context.beginPath();
+            context.arc(50+100*i,420,40,0,2*Math.PI*(i+1)/10,true);
+
+            context.stroke();
+        }
+
+        context.fillStyle="#005588";
+        for(var i = 0; i < 10;i++){
+            context.beginPath();
+            context.arc(50+100*i,540,40,0,2*Math.PI*(i+1)/10);
+            context.closePath();
+
+            context.fill();
+        }
+
+        for(var i = 0; i < 10;i++){
+            context.beginPath();
+            context.arc(50+100*i,660,40,0,2*Math.PI*(i+1)/10);
+
+
+            context.fill();
+        }
+    }
+</script>
+</body>
+</html>
